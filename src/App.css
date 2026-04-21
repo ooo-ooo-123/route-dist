@@ -1,0 +1,209 @@
+/* 全局重置 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 白天机械风主题 */
+:root {
+  --bg-main: #f0f4f8; /* 金属浅灰背景 */
+  --bg-card: #ffffff; /* 卡片白底色 */
+  --text-primary: #1e293b; /* 深黑主文字 */
+  --text-secondary: #475569; /* 深灰正文 */
+  --text-muted: #94a3b8; /* 浅灰次要文字 */
+  --primary-blue: #2563eb; /* 科技蓝主色 */
+  --border: #cbd5e1; /* 金属灰边框 */
+  --border-glow: rgba(37, 99, 235, 0.2); /* 浅蓝发光边框 */
+  --shadow: 0 4px 12px rgba(0,0,0,0.06); /* 柔和机械阴影 */
+}
+
+/* 暗黑模式主题 */
+.dark {
+  --bg-main: #0f172a; /* 深空背景 */
+  --bg-card: #1e293b; /* 深色面板 */
+  --text-primary: #f1f5f9; /* 亮白主文字 */
+  --text-secondary: #cbd5e1; /* 浅灰正文 */
+  --text-muted: #94a3b8; /* 中灰次要文字 */
+  --primary-blue: #60a5fa; /* 霓虹蓝主色 */
+  --border: #334155; /* 深色边框 */
+  --border-glow: rgba(96, 165, 250, 0.3); /* 发光边框 */
+  --shadow: 0 4px 12px rgba(0,0,0,0.3); /* 霓虹阴影 */
+}
+
+/* 全局基础样式 —— 只在这里加了左右内边距，别的啥都没动 */
+body {
+  font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  line-height: 1.8;
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  padding-left: 22px; /* 左边留出空隙！！ */
+  padding-right: 22px;
+}
+
+/* 顶部横幅：渐变科技感 */
+header {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  color: white;
+  padding: 2rem 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow);
+}
+
+header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  font-size: 1.1rem;
+  opacity: 0.95;
+}
+
+/* 导航栏：金属质感 */
+nav {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow);
+}
+
+nav a {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  margin: 0 0.25rem;
+  border-radius: 2px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+nav a:hover {
+  background-color: rgba(37, 99, 235, 0.1);
+  color: var(--primary-blue);
+}
+
+nav a.active {
+  background-color: var(--primary-blue);
+  color: white;
+}
+
+/* 文章卡片：机械面板边框 */
+article, section, .content-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-glow);
+  border-radius: 4px;
+  padding: 1.75rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow);
+  position: relative;
+}
+
+article::after, section::after, .content-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--primary-blue), transparent);
+  border-radius: 4px 4px 0 0;
+}
+
+/* 文字排版：层级分明 */
+h1, h2, h3 {
+  color: var(--text-primary);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+h1 { font-size: 2rem; }
+h2 { 
+  font-size: 1.75rem; 
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.5rem;
+}
+h3 { font-size: 1.35rem; }
+
+p, li {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.meta-info {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* 侧边栏：终端面板风 */
+.sidebar-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-glow);
+  border-radius: 4px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow);
+}
+
+.sidebar-card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--primary-blue);
+  color: var(--text-primary);
+}
+
+/* 头像：机械科技边框 */
+.author-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 4px; /* 方角机械感 */
+  border: 2px solid var(--primary-blue);
+  margin: 0 auto 1rem;
+  display: block;
+  box-shadow: 0 0 8px rgba(37, 99, 235, 0.3);
+}
+
+.social-buttons {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.social-buttons button {
+  background-color: var(--primary-blue);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 2px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.social-buttons button:hover {
+  background-color: #1d4ed8;
+}
+
+/* 链接/按钮 */
+a {
+  color: var(--primary-blue);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #1d4ed8;
+}

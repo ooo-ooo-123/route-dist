@@ -1,0 +1,36 @@
+.header {
+  /* 原来的代码：
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  */
+  
+  /* 改成你喜欢的粉色代码 */
+  background: linear-gradient(135deg, #D8B4FE, #A78BFA, #7DD3FC);
+  
+  color: white;
+  padding: 30px 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+  
+  .header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    letter-spacing: -0.5px;
+  }
+  
+  .header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+  }
+  
+  /* 移动端微调 */
+  @media (max-width: 768px) {
+    .header h1 {
+      font-size: 2rem;
+    }
+    .header p {
+      font-size: 1rem;
+    }
+  }
+  /* 测试提交，触发部署 */
